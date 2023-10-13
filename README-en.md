@@ -1,7 +1,7 @@
 # VideoPlayer
 A video player for Android.
 
-![Maven Central](https://img.shields.io/maven-central/v/xyz.doikki.android.dkplayer/dkplayer-java)
+![Maven Central](https://jitpack.io/v/minorlai/VideoPlayer.svg)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 
 
