@@ -9,7 +9,7 @@ buildscript {
 //        mavenLocal()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath 'com.android.tools.build:gradle:7.4.2'
         // maven publish tool
         classpath 'org.jetbrains.dokka:dokka-gradle-plugin:1.4.30'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"

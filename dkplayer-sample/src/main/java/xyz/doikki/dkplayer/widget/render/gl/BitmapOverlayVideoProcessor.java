@@ -77,11 +77,14 @@ import javax.microedition.khronos.opengles.GL10;
     @Override
     public void initialize() {
         try {
-            program =
-                    new GlProgram(
-                            context,
-                            /* vertexShaderFilePath= */ "bitmap_overlay_video_processor_vertex.glsl",
-                            /* fragmentShaderFilePath= */ "bitmap_overlay_video_processor_fragment.glsl");
+            try {
+                program =
+                        new GlProgram(
+                                context,
+                                /* vertexShaderFilePath= */ "bitmap_overlay_video_processor_vertex.glsl",
+                                /* fragmentShaderFilePath= */ "bitmap_overlay_video_processor_fragment.glsl");
+            } catch (GlUtil.GlException e) {
+            }
         } catch (IOException e) {
             throw new IllegalStateException(e);
         }
@@ -118,7 +121,10 @@ import javax.microedition.khronos.opengles.GL10;
         GLES20.glBindTexture(GL10.GL_TEXTURE_2D, textures[0]);
         GLUtils.texSubImage2D(
                 GL10.GL_TEXTURE_2D, /* level= */ 0, /* xoffset= */ 0, /* yoffset= */ 0, overlayBitmap);
-        GlUtil.checkGlError();
+        try {
+            GlUtil.checkGlError();
+        } catch (GlUtil.GlException e) {
+        }
 
         // Run the shader program.
         GlProgram program = checkNotNull(this.program);
@@ -127,16 +133,25 @@ import javax.microedition.khronos.opengles.GL10;
         program.setFloatUniform("uScaleX", bitmapScaleX);
         program.setFloatUniform("uScaleY", bitmapScaleY);
         program.setFloatsUniform("uTexTransform", transformMatrix);
-        program.bindAttributesAndUniforms();
+        try {
+            program.bindAttributesAndUniforms();
+        } catch (GlUtil.GlException e) {
+        }
         GLES20.glClear(GLES20.GL_COLOR_BUFFER_BIT);
         GLES20.glDrawArrays(GLES20.GL_TRIANGLE_STRIP, /* first= */ 0, /* count= */ 4);
-        GlUtil.checkGlError();
+        try {
+            GlUtil.checkGlError();
+        } catch (GlUtil.GlException e) {
+        }
     }
 
     @Override
     public void release() {
         if (program != null) {
-            program.delete();
+            try {
+                program.delete();
+            } catch (GlUtil.GlException e) {
+            }
         }
     }
 }

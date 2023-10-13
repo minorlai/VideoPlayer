@@ -289,7 +289,10 @@ public final class GLSurfaceRenderView extends GLSurfaceView implements Render {
 
         @Override
         public synchronized void onSurfaceCreated(GL10 gl, EGLConfig config) {
-            texture = GlUtil.createExternalTexture();
+            try {
+                texture = GlUtil.createExternalTexture();
+            } catch (GlUtil.GlException e) {
+            }
             surfaceTexture = new SurfaceTexture(texture);
             surfaceTexture.setOnFrameAvailableListener(
                     surfaceTexture -> {
