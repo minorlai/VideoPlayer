@@ -1,4 +1,4 @@
-# DKVideoPlayer
+# VideoPlayer
 A video player for Android.
 
 ![Maven Central](https://img.shields.io/maven-central/v/xyz.doikki.android.dkplayer/dkplayer-java)
@@ -15,14 +15,6 @@ A video player for Android.
 
 ### [How to use](https://github.com/Doikki/DKVideoPlayer/wiki#%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8)
 
-### Encounter problems
-1. Read the sample: [dkplayer-sample](https://github.com/Doikki/DKVideoPlayer/tree/master/dkplayer-sample)
-2. Read [wiki](https://github.com/Doikki/DKVideoPlayer/wiki) or [FAQ](https://github.com/Doikki/DKVideoPlayer/wiki/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98)
-3. Read the source code
-4. Submit an [issue](https://github.com/Doikki/DKVideoPlayer/issues) or contact me: xinyunjian1995@gmail.com
-
-### communicate
-QQ Group: 758154597
 
 ### License
 ```
