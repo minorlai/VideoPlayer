@@ -10,7 +10,7 @@ task androidSourcesJar(type: Jar) {
 }
 
 ext {
-    PUBLISH_GROUP_ID = 'xyz.doikki.android.dkplayer'
+    PUBLISH_GROUP_ID = 'com.allen.android.player'
     PUBLISH_VERSION = project.ext.releaseVersion
 }
 
@@ -49,7 +49,7 @@ publishing {
                 name = PUBLISH_ARTIFACT_ID
                 description = 'A video player for Android.'
                 // If your project has a dedicated site, use its URL here
-                url = 'https://github.com/Doikki/DKVideoPlayer'
+                url = 'https://github.com/minorlai/VideoPlayer'
                 licenses {
                     license {
                         //协议类型，一般默认Apache License2.0的话不用改：
@@ -59,16 +59,16 @@ publishing {
                 }
                 developers {
                     developer {
-                        id = 'Doikki'
-                        name = 'Doikki'
-                        email = 'xinyunjian1995@gmail.com'
+                        id = 'Allen'
+                        name = 'Allen'
+                        email = 'allenlying@163.com'
                     }
                 }
-                // Version control info, if you're using GitHub, follow the format as seen here
+                // 版本控制信息，如果您使用 GitHub，请遵循此处所示的格式
                 scm {
-                    connection = 'scm:git:github.com/Doikki/DKVideoPlayer.git'
-                    developerConnection = 'scm:git:ssh://github.com/Doikki/DKVideoPlayer.git'
-                    url = 'https://github.com/Doikki/DKVideoPlayer/tree/master'
+                    connection = 'scm:git@github.com:minorlai/VideoPlayer.git'
+                    developerConnection = 'scm:git:ssh://github.com:minorlai/VideoPlayer.git'
+                    url = 'https://github.com/minorlai/VideoPlayer/tree/master'
                 }
                 // A slightly hacky fix so that your POM will include any transitive dependencies
                 // that your library builds upon

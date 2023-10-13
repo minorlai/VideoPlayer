@@ -26,7 +26,7 @@ dependencies {
 }
 
 ext {
-    PUBLISH_ARTIFACT_ID = 'dkplayer-java'
+    PUBLISH_ARTIFACT_ID = 'player'
 }
 
 apply from: '../publish.gradle'
