@@ -10,27 +10,27 @@ task androidSourcesJar(type: Jar) {
 }
 
 ext {
-    PUBLISH_GROUP_ID = 'com.allen.android.player'
+    PUBLISH_GROUP_ID = 'com.allen'
     PUBLISH_VERSION = project.ext.releaseVersion
 }
 
-ext["signing.keyId"] = ''
-ext["signing.password"] = ''
-ext["signing.secretKeyRingFile"] = ''
-ext["ossrhUsername"] = ''
-ext["ossrhPassword"] = ''
+//ext["signing.keyId"] = ''
+//ext["signing.password"] = ''
+//ext["signing.secretKeyRingFile"] = ''
+//ext["ossrhUsername"] = ''
+//ext["ossrhPassword"] = ''
 
-File secretPropsFile = project.rootProject.file('local.properties')
-if (secretPropsFile.exists()) {
-    println "Found secret props file, loading props"
-    Properties p = new Properties()
-    p.load(new FileInputStream(secretPropsFile))
-    p.each { name, value ->
-        ext[name] = value
-    }
-} else {
-    println "No props file, loading env vars"
-}
+//File secretPropsFile = project.rootProject.file('local.properties')
+//if (secretPropsFile.exists()) {
+//    println "Found secret props file, loading props"
+//    Properties p = new Properties()
+//    p.load(new FileInputStream(secretPropsFile))
+//    p.each { name, value ->
+//        ext[name] = value
+//    }
+//} else {
+//    println "No props file, loading env vars"
+//}
 publishing {
     publications {
         release(MavenPublication) {
@@ -65,11 +65,11 @@ publishing {
                     }
                 }
                 // 版本控制信息，如果您使用 GitHub，请遵循此处所示的格式
-                scm {
-                    connection = 'scm:git@github.com:minorlai/VideoPlayer.git'
-                    developerConnection = 'scm:git:ssh://github.com:minorlai/VideoPlayer.git'
-                    url = 'https://github.com/minorlai/VideoPlayer/tree/master'
-                }
+//                scm {
+//                    connection = 'scm:git@github.com:minorlai/VideoPlayer.git'
+//                    developerConnection = 'scm:git:ssh://github.com:minorlai/VideoPlayer.git'
+//                    url = 'https://github.com/minorlai/VideoPlayer/tree/master'
+//                }
                 // A slightly hacky fix so that your POM will include any transitive dependencies
                 // that your library builds upon
                 withXml {
@@ -89,26 +89,26 @@ publishing {
             }
         }
     }
-    repositories {
-        // The repository to publish to, Sonatype/MavenCentral
-        maven {
-            // This is an arbitrary name, you may also use "mavencentral" or
-            // any other name that's descriptive for you
-            name = "mavenCentral"
-
-            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
-            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
-            // You only need this if you want to publish snapshots, otherwise just set the URL
-            // to the release repo directly
-            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
-
-            // The username and password we've fetched earlier
-            credentials {
-                username ossrhUsername
-                password ossrhPassword
-            }
-        }
-    }
+//    repositories {
+//        // The repository to publish to, Sonatype/MavenCentral
+//        maven {
+//            // This is an arbitrary name, you may also use "mavencentral" or
+//            // any other name that's descriptive for you
+//            name = "mavenCentral"
+//
+//            def releasesRepoUrl = "https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/"
+//            def snapshotsRepoUrl = "https://s01.oss.sonatype.org/content/repositories/snapshots/"
+//            // You only need this if you want to publish snapshots, otherwise just set the URL
+//            // to the release repo directly
+//            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+//
+//            // The username and password we've fetched earlier
+//            credentials {
+//                username ossrhUsername
+//                password ossrhPassword
+//            }
+//        }
+//    }
 }
 signing {
     sign publishing.publications
