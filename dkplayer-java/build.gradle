@@ -1,8 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-
 apply from: '../constants.gradle'
-
+apply plugin: 'maven-publish'
+group 'com.allen.player'
 android {
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
@@ -26,8 +26,8 @@ dependencies {
     compileOnly project.ext.annotation
 }
 
-ext {
-    PUBLISH_ARTIFACT_ID = 'player'
-}
-
-apply from: '../publish.gradle'
+//ext {
+//    PUBLISH_ARTIFACT_ID = 'player'
+//}
+//
+//apply from: '../publish.gradle'

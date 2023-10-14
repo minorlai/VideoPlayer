@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply from: '../../constants.gradle'
-
+apply plugin: 'maven-publish'
+group 'com.allen.player-exo'
 android {
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
@@ -27,8 +28,8 @@ dependencies {
     api "com.google.android.exoplayer:extension-rtmp:$project.exoPlayerVersion"
 }
 
-ext {
-    PUBLISH_ARTIFACT_ID = 'player-exo'
-}
-
-apply from: '../../publish.gradle'
+//ext {
+//    PUBLISH_ARTIFACT_ID = 'player-exo'
+//}
+//
+//apply from: '../../publish.gradle'

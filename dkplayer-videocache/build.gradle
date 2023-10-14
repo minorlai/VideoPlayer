@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 apply from: '../constants.gradle'
-
+apply plugin: 'maven-publish'
+group 'com.allen.player-cache'
 android {
     compileSdkVersion project.ext.compileSdkVersion
     buildToolsVersion project.ext.buildToolsVersion
@@ -11,9 +12,9 @@ android {
     }
 }
 
-ext {
-    PUBLISH_ARTIFACT_ID = 'videocache'
-}
-
-apply from: '../publish.gradle'
+//ext {
+//    PUBLISH_ARTIFACT_ID = 'videocache'
+//}
+//
+//apply from: '../publish.gradle'
 
