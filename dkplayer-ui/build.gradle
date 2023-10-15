@@ -17,8 +17,8 @@ dependencies {
     api project(':dkplayer-java')
 }
 
-ext {
-    PUBLISH_ARTIFACT_ID = 'player-ui'
-}
+//ext {
+//    PUBLISH_ARTIFACT_ID = 'player-ui'
+//}
 
-apply from: '../publish.gradle'
+//apply from: '../publish.gradle'

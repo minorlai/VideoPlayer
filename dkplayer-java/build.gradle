@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply from: '../constants.gradle'
 apply plugin: 'maven-publish'
-group 'com.allen.player'
+//group 'com.allen.player'
 android {
     compileSdkVersion project.ext.compileSdkVersion
 
@@ -12,10 +12,10 @@ android {
     }
 
     kotlinOptions{
-//        jvmTarget = '1.8'
-        freeCompilerArgs += [
-                '-Xjvm-default=all'
-        ]
+        jvmTarget = '1.8'
+//        freeCompilerArgs += [
+//                '-Xjvm-default=all'
+//        ]
     }
 
 }

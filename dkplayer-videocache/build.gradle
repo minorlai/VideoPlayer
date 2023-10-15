@@ -1,7 +1,8 @@
 apply plugin: 'com.android.library'
 apply from: '../constants.gradle'
 apply plugin: 'maven-publish'
-group 'com.allen.player-cache'
+//group 'com.allen.player-cache'
+
 android {
     compileSdkVersion project.ext.compileSdkVersion
 
