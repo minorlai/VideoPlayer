@@ -6,7 +6,7 @@ project.ext {
     targetSdkVersion = 31
     compileSdkVersion = 31
 
-    exoPlayerVersion = '2.18.1'
+    exoPlayerVersion = '2.18.3'
 
     annotation = 'androidx.annotation:annotation:1.1.0'
 }
