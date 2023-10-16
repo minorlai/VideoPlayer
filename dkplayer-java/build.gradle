@@ -5,7 +5,6 @@ apply plugin: 'maven-publish'
 group 'com.allen.player'
 android {
     compileSdkVersion project.ext.compileSdkVersion
-    buildToolsVersion project.ext.buildToolsVersion
 
     defaultConfig {
         minSdkVersion project.ext.minSdkVersion
